@@ -11,7 +11,7 @@ const formvalidationSchema = yup.object({
   subject: yup.string().required(),
 });
 
-const CreateMentor = ({ mentor, setMentor }) => {
+const CreateTeacher = ({ teacher, setTeacher }) => {
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -25,7 +25,7 @@ const CreateMentor = ({ mentor, setMentor }) => {
     validationSchema: formvalidationSchema,
     onSubmit: (values) => {
       console.log("form values", values);
-      setMentor([...mentor, values]);
+      setTeacher([...teacher, values]);
       navigate("/home1");
     },
   });
@@ -33,7 +33,7 @@ const CreateMentor = ({ mentor, setMentor }) => {
   return (
     <>
       <form className="form-container" onSubmit={formik.handleSubmit}>
-        <h2 className="text-center my-5">Add Mentor Details</h2>
+        <h2 className="text-center my-5">Add Teacher Details</h2>
         <div className="container">
           <div className="form-group">
             <input
@@ -102,4 +102,4 @@ const CreateMentor = ({ mentor, setMentor }) => {
   );
 };
 
-export default CreateMentor;
+export default CreateTeacher;

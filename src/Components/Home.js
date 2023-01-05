@@ -10,7 +10,7 @@ const Home = () => {
        <div>
        <h1 className="main-heading text-center">CRUD APP
        </h1>
-       <h3 className="text-center p-3">Student-Mentor Details</h3>
+       <h3 className="text-center p-3">Student-Teacher Details</h3>
        </div>
        
         <div className="container">

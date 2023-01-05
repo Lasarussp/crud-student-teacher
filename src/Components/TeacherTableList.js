@@ -5,14 +5,14 @@ import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate } from "react-router-dom";
 
 
-const TeacherTableList = ({mentor,setMentor}) => {
+const TeacherTableList = ({teacher,setTeacher}) => {
   const DeleteUser = (id) => {
-    setMentor(mentor.filter((num) => num.id !== id));
+    setTeacher(teacher.filter((num) => num.id !== id));
   };
 
   const editForm = (id) => {
 
-    navigate(`/editmentor/${id}`);
+    navigate(`/editteacher/${id}`);
   };
 
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const TeacherTableList = ({mentor,setMentor}) => {
   return (
     <>
       <tbody>
-        {mentor.map((user,index) => (
+        {teacher.map((user,index) => (
           <tr key={index}>
             <td>{user.id}</td>
             <td>{user.name}</td>

@@ -41,15 +41,14 @@ const [teacher,setTeacher] = useState([
     subject:"Nodejs",
     contact:9988776655,
   }
-])
-
+]);
   
   return (
     <div>
       <Routes>
       <Route
           path="/"
-          element={<Login/>}
+          element={<Login />}
         />
         <Route
           path="/home"
@@ -57,7 +56,7 @@ const [teacher,setTeacher] = useState([
         />
         <Route
           path="/main"
-          element={<Home/>}
+          element={<Home />}
         />
         <Route
           path="/form"
