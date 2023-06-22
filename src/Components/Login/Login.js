@@ -11,11 +11,11 @@ const Login = () => {
     <div className="container">
       <div className="card mt-5">
         <div className="card-header">
-          <h1 className="text-center">Teacher Login</h1>
+          <h1 className="text-center">Mentor Login</h1>
         </div>
         <div className="card-body">
           <div className="row mt-5">
-            <form className=" login-div" onSubmit={(e)=>e.preventDefault()}>
+            <form className=" login-div" onSubmit={(e) => e.preventDefault()}>
               <div className="form-group col-sm-12 col-lg-8 mb-3">
                 <label htmlFor="Input2" className="form-label">
                   Email address

@@ -8,7 +8,6 @@ const Table = ({ formList, setFormList }) => {
   return (
     <>
       <div className="container container-1 mt-5">
-      
         <div className="row row-main">
           <div className="col">
             <h2 className="text-center pb-3">Student Details</h2>
@@ -34,11 +33,11 @@ const Table = ({ formList, setFormList }) => {
                 Create
               </button>
               <button
-              className="btn btn-primary create-btn"
-              onClick={() => navigate(`/main`)}
-            >
-             Back
-            </button>
+                className="btn btn-primary create-btn"
+                onClick={() => navigate(`/main`)}
+              >
+                Back
+              </button>
             </div>
           </div>
         </div>

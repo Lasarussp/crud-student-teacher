@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import EditUser from "./Components/Edit/EditUser";
 import Login from "./Components/Login/Login";
 import TeacherTable from "./Components/TeacherTable";
-import CreateTeacher from './Components/CreateTeacher';
+import CreateTeacher from "./Components/CreateTeacher";
 import EditTeacher from "./Components/EditTeacher";
 import Home from "./Components/Home";
 
@@ -22,56 +22,53 @@ function App() {
       id: 2,
       name: "Bob",
       email: "bob@gmail.com",
-      contact: 9988998800,
-      },
+      contact: 9080706050,
+    },
   ]);
 
-const [teacher,setTeacher] = useState([
-  {
-    id:1,
-    name:"Prabha",
-    email:"prabha@gmail.com",
-    subject:"React",
-    contact:8778075566,
-  },
-  {
-    id:2,
-    name:"Charlie",
-    email:"charlie@gmail.com",
-    subject:"Nodejs",
-    contact:9988776655,
-  }
-]);
-  
+  const [teacher, setTeacher] = useState([
+    {
+      id: 1,
+      name: "Vinay",
+      email: "vinay@gmail.com",
+      subject: "Html",
+      contact: 9876543210,
+    },
+    {
+      id: 2,
+      name: "Sathesh",
+      email: "sathesh@gmail.com",
+      subject: "Css",
+      contact: 9998887770,
+    },
+  ]);
+
   return (
     <div>
       <Routes>
-      <Route
-          path="/"
-          element={<Login />}
-        />
+        <Route path="/" element={<Login />} />
         <Route
           path="/home"
           element={<Table formList={formList} setFormList={setFormList} />}
         />
-        <Route
-          path="/main"
-          element={<Home />}
-        />
+        <Route path="/main" element={<Home />} />
         <Route
           path="/form"
           element={<Form formList={formList} setFormList={setFormList} />}
         />
+        <Route path="/edit/:id" element={<EditUser formList={formList} />} />
         <Route
-          path="/edit/:id"
-          element={<EditUser formList={formList} />}
-        />
-        <Route
-          path="/editmentor/:id"
+          path="/editteacher/:id"
           element={<EditTeacher teacher={teacher} />}
         />
-        <Route path="/form1" element={<CreateTeacher teacher={teacher} setTeacher={setTeacher} />} />
-        <Route path="/home1" element={<TeacherTable teacher={teacher} setTeacher={setTeacher} />} />
+        <Route
+          path="/form1"
+          element={<CreateTeacher teacher={teacher} setTeacher={setTeacher} />}
+        />
+        <Route
+          path="/home1"
+          element={<TeacherTable teacher={teacher} setTeacher={setTeacher} />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

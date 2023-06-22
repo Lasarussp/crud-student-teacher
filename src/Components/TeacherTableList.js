@@ -1,17 +1,15 @@
-import React from 'react';
+import React from "react";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate } from "react-router-dom";
 
-
-const TeacherTableList = ({teacher,setTeacher}) => {
+const TeacherTableList = ({ teacher, setTeacher }) => {
   const DeleteUser = (id) => {
     setTeacher(teacher.filter((num) => num.id !== id));
   };
 
   const editForm = (id) => {
-
     navigate(`/editteacher/${id}`);
   };
 
@@ -20,7 +18,7 @@ const TeacherTableList = ({teacher,setTeacher}) => {
   return (
     <>
       <tbody>
-        {teacher.map((user,index) => (
+        {teacher.map((user, index) => (
           <tr key={index}>
             <td>{user.id}</td>
             <td>{user.name}</td>
@@ -49,7 +47,7 @@ const TeacherTableList = ({teacher,setTeacher}) => {
         ))}
       </tbody>
     </>
-  )
+  );
 };
 
 export default TeacherTableList;

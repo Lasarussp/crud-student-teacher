@@ -1,44 +1,32 @@
-import React from 'react'
-import "./Form.css"
-import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import "./Form.css";
+import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
 const formvalidationSchema = yup.object({
-  id: yup
-      .number()
-      .required(),
-  name: yup
-      .string()
-      .required().min(4),
-  email: yup
-      .string()
-      .required(),
-  contact: yup
-      .string()
-      .required().min(10),
- 
-})
-const Form = ({formList,setFormList}) => {
-  
-
+  id: yup.number().required(),
+  name: yup.string().required().min(4),
+  email: yup.string().required(),
+  contact: yup.string().required().min(10),
+});
+const Form = ({ formList, setFormList }) => {
   const navigate = useNavigate();
 
   const formik = useFormik({
-      initialValues: {
-          id:"",
-          name:"",
-          email: "",
-          contact: "",
-      },
-      validationSchema: formvalidationSchema,
-      onSubmit: (values) =>  {
-        console.log("form values", values);
-        setFormList([...formList, values]);
-        navigate("/home");
+    initialValues: {
+      id: "",
+      name: "",
+      email: "",
+      contact: "",
     },
-  })
-
+    validationSchema: formvalidationSchema,
+    onSubmit: (values) => {
+      console.log("form values", values);
+      setFormList([...formList, values]);
+      navigate("/home");
+    },
+  });
 
   return (
     <>
@@ -66,7 +54,6 @@ const Form = ({formList,setFormList}) => {
               value={formik.values.name}
               onChange={formik.handleChange}
             />
-            
           </div>
           <div className="form-group">
             <input
@@ -81,7 +68,7 @@ const Form = ({formList,setFormList}) => {
           </div>
           <div className="form-group">
             <textarea
-            type="text"
+              type="text"
               className="form-control"
               id="Textarea"
               rows="3"
@@ -93,13 +80,13 @@ const Form = ({formList,setFormList}) => {
           </div>
         </div>
         <div className="c-3">
-          <button type="submit" className="btn btn-primary create-btn" >
+          <button type="submit" className="btn btn-primary create-btn">
             Add
           </button>
         </div>
       </form>
     </>
-  )
-}
+  );
+};
 
 export default Form;

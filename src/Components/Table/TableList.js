@@ -10,7 +10,6 @@ const TableList = ({ formList, setFormList }) => {
   };
 
   const editForm = (id) => {
-
     navigate(`/edit/${id}`);
   };
 
@@ -18,7 +17,7 @@ const TableList = ({ formList, setFormList }) => {
   return (
     <>
       <tbody>
-        {formList.map((user,index) => (
+        {formList.map((user, index) => (
           <tr key={index}>
             <td>{user.id}</td>
             <td>{user.name}</td>

@@ -1,47 +1,37 @@
-import React from 'react'
-import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import { useParams } from 'react-router-dom';
-import "./EditUser.css"
+import { useParams } from "react-router-dom";
+import "./EditUser.css";
 
 const formvalidationSchema = yup.object({
-    id: yup
-        .number()
-        .required(),
-    name: yup
-        .string()
-        .required().min(4),
-    email: yup
-        .string()
-        .required(),
-    contact: yup
-        .string()
-        .required().min(5),
-   
-})
-const EditUser = ({formList}) => {
-
+  id: yup.number().required(),
+  name: yup.string().required().min(4),
+  email: yup.string().required(),
+  contact: yup.string().required().min(5),
+});
+const EditUser = ({ formList }) => {
   const params = useParams();
-  const Index = formList.findIndex((item) => item.id === params.id);
+  // eslint-disable-next-line
+  const Index = formList.findIndex((item) => item.id == params.id);
   const details = formList[Index];
 
   const navigate = useNavigate();
 
   const formik = useFormik({
-      initialValues: {
-          id: details.id,
-          name: details.name,
-          email: details.email,
-          contact: details.contact,
-      },
-      validationSchema: formvalidationSchema,
-      onSubmit: (values) => {
-          formList.splice(Index, 1, values);
-          navigate("/home");
-      },
-  })
-
+    initialValues: {
+      id: details.id,
+      name: details.name,
+      email: details.email,
+      contact: details.contact,
+    },
+    validationSchema: formvalidationSchema,
+    onSubmit: (values) => {
+      formList.splice(Index, 1, values);
+      navigate("/home");
+    },
+  });
 
   return (
     <>
@@ -94,13 +84,11 @@ const EditUser = ({formList}) => {
           </div>
         </div>
         <div className="c-3">
-          <button className="btn btn-primary create-btn" >
-            Update
-          </button>
+          <button className="btn btn-primary create-btn">Update</button>
         </div>
       </form>
     </>
-  )
-}
+  );
+};
 
 export default EditUser;

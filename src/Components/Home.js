@@ -7,12 +7,11 @@ const Home = () => {
   return (
     <>
       <div className="container">
-       <div>
-       <h1 className="main-heading text-center">CRUD APP
-       </h1>
-       <h3 className="text-center p-3">Student-Teacher Details</h3>
-       </div>
-       
+        <div>
+          <h1 className="main-heading text-center">CRUD APP</h1>
+          <h3 className="text-center p-3">Student-Teacher Details</h3>
+        </div>
+
         <div className="container">
           <div className="row mb-5">
             <div className="card">
@@ -27,7 +26,10 @@ const Home = () => {
                 </ul>
               </div>
               <div className="card-footer text-center">
-                <button className="btn btn-primary" onClick={()=>navigate("/home")}>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => navigate("/home")}
+                >
                   View Students Details
                 </button>
               </div>
@@ -47,7 +49,12 @@ const Home = () => {
                 </ul>
               </div>
               <div className="card-footer text-center">
-                <button className="btn btn-primary"  onClick={()=>navigate("/home1")}>View Teacher Details</button>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => navigate("/home1")}
+                >
+                  View Teacher Details
+                </button>
               </div>
             </div>
           </div>
